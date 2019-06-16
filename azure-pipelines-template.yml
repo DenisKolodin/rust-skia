@@ -103,6 +103,9 @@ jobs:
         (cd skia-safe && cargo clippy --release --features "$(features)" --all-targets -- -D warnings)
       displayName: Clippy skia-bindings and skia-safe
 
+  - script: cd skia-bindings && cargo test --release --features "$(features)" -vv
+    displayName: Test skia-bindings
+
   - script: cd skia-safe && cargo test --release --features "$(features)" -vv
     displayName: Test skia-safe
 
